@@ -8,12 +8,10 @@
         type="button" class="btn btn-outline-success">
         Nuevo miembro
 </button>
-
 <hr>
 
 <div class="row animated fadeIn fast">
   <div class="col-md-12">
-
     <form (ngSubmit)="guardar()" #forma="ngForm">
 
       <div class="form-group">
@@ -48,7 +46,7 @@
       <div class="form-group">
         <button [disabled]="!forma.valid"
                 type="submit" class="btn btn-outline-primary">
-                Guardar carmbios
+                Guardar cambios
         </button>
       </div>
 

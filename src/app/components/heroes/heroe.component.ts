@@ -18,7 +18,7 @@ export class HeroeComponent implements OnInit {
     tipo: 'Colaborador'
   };
 
-  nuevo: boolean = false;
+  nuevo = false;
   id: string;
 
   constructor(private _heroesService: HeroesService,
