@@ -1,9 +1,11 @@
 
-import {map} from 'rxjs/operators';
+// import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Heroe } from '../interfaces/heroe.interface';
-import 'rxjs/Rx';
+// import 'rxjs/Rx';
+import { Observable, BehaviorSubject, interval, of } from 'rxjs';
+import { delay, map, share, take } from 'rxjs/operators';
 
 @Injectable()
 export class HeroesService {
@@ -21,8 +23,8 @@ export class HeroesService {
 
   nuevoHeroe( heroe: Heroe ) {
 
-    let body = JSON.stringify( heroe );
-    let headers = new Headers({
+    const body = JSON.stringify( heroe );
+    const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
@@ -35,12 +37,12 @@ export class HeroesService {
 
   actualizarHeroe( heroe: Heroe, key$: string ) {
 
-    let body = JSON.stringify( heroe );
-    let headers = new Headers({
+    const body = JSON.stringify( heroe );
+    const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
-    let url = `${ this.heroeURL }/${ key$ }.json`;
+    const url = `${ this.heroeURL }/${ key$ }.json`;
 
     return this.http.put(  url , body, { headers }  ).pipe(
           map( res => {
@@ -51,7 +53,7 @@ export class HeroesService {
 
   getHeroe( key$: string ) {
 
-    let url = `${ this.heroeURL }/${ key$ }.json`;
+    const url = `${ this.heroeURL }/${ key$ }.json`;
     return this.http.get( url ).pipe(
       map( res => res.json() ));
 
@@ -66,7 +68,7 @@ export class HeroesService {
 
   borrarHeroe( key$: string) {
 
-    let url = `${  this.heroeURL  }/${ key$ }.json`;
+    const url = `${  this.heroeURL  }/${ key$ }.json`;
     return this.http.delete( url ).pipe(
         map( res => res.json() ));
 

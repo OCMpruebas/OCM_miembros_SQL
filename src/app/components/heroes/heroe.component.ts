@@ -37,7 +37,7 @@ export class HeroeComponent implements OnInit {
   ngOnInit() {
   }
 
-  guardar(){
+  guardar() {
     console.log(this.heroe);
 
     if ( this.id === 'nuevo' ) {
@@ -47,7 +47,7 @@ export class HeroeComponent implements OnInit {
                   this.router.navigate(['/heroe', data.name] );
             },
             error => console.error(error));
-    }else {
+    } else {
       // actualizando
       this._heroesService.actualizarHeroe( this.heroe, this.id )
             .subscribe( data => {
@@ -58,7 +58,7 @@ export class HeroeComponent implements OnInit {
   }
 
   agregarNuevo( forma: NgForm ) {
-    this.router.navigate(['/heroe','nuevo']);
+    this.router.navigate(['/heroe', 'nuevo']);
     forma.reset({
       casa: 'Colaborador'
     });
