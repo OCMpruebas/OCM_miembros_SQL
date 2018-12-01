@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Heroe } from '../interfaces/heroe.interface';
@@ -7,7 +6,6 @@ import { delay, map, share, take } from 'rxjs/operators';
 
 @Injectable()
 export class HeroesService {
-
   // MAM
   heroesURL = `https://heroesapp-74fe2.firebaseio.com/heroesapp-74fe2.json`;
   heroeURL = `https://heroesapp-74fe2.firebaseio.com/heroesapp-74fe2/`;

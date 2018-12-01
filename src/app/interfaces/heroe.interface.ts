@@ -1,4 +1,3 @@
-
 export interface Heroe {
   nombre: string;
   observaciones: string;
