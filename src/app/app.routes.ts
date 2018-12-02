@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroeComponent } from './components/heroes/heroe.component';
+import { MiembrosComponent } from './components/miembros/miembros.component';
+import { MiembroComponent } from './components/miembros/miembro.component';
 
 const app_routes: Routes = [
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'heroe/:id', component: HeroeComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'heroes' }
+  { path: 'miembros', component: MiembrosComponent },
+  { path: 'miembro/:id', component: MiembroComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'miembros' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(app_routes);

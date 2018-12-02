@@ -3,23 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { APP_ROUTING } from "./app.routes";
+import { APP_ROUTING } from './app.routes';
 
 // servicios
-import { HeroesService } from './services/heroes.service';
+import { MiembrosService } from './services/miembros.service';
 
 // Pipes
 import { KeysPipe } from './pipes/keys.pipe';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroeComponent } from './components/heroes/heroe.component';
+import { MiembrosComponent } from './components/miembros/miembros.component';
+import { MiembroComponent } from './components/miembros/miembro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroeComponent,
+    MiembrosComponent,
+    MiembroComponent,
     KeysPipe
   ],
   imports: [
@@ -29,7 +29,7 @@ import { HeroeComponent } from './components/heroes/heroe.component';
     APP_ROUTING
   ],
   providers: [
-    HeroesService
+    MiembrosService
   ],
   bootstrap: [AppComponent]
 })

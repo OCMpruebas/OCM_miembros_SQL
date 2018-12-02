@@ -1,4 +1,4 @@
-export interface Heroe {
+export interface Miembro {
   nombre: string;
   observaciones: string;
   tipo: string;

@@ -1,9 +1,9 @@
-<h1>Miembros Observatorio Ciudadano Municipal de Jerez</h1>
+<h1>Miembros Observatorio Ciudadano Municipal de Jerez.</h1>
 <hr>
 
 <div class="row">
   <div class="col-md-12 text-right">
-    <button [routerLink]="['/heroe','nuevo']"
+    <button [routerLink]="['/miembro','nuevo']"
             class="btn btn-outline-primary"
             type="button" name="button">
             Nuevo miembro
@@ -27,17 +27,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let k of heroes | keys; let i = index">
+          <tr *ngFor="let k of miembros | keys; let i = index">
             <td>{{ i + 1 }}</td>
-            <td>{{ heroes[k].nombre }}</td>
-            <td>{{ heroes[k].tipo }}</td>
-            <td>{{ heroes[k].observaciones }}</td>
+            <td>{{ miembros[k].nombre }}</td>
+            <td>{{ miembros[k].tipo }}</td>
+            <td>{{ miembros[k].observaciones }}</td>
             <td class="text-right w120">
-              <button [routerLink]="['/heroe', k]"
+              <button [routerLink]="['/miembro', k]"
                       type="button" class="btn btn-outline-success">
                       Editar
               </button>
-              <button (click)="borraHeroe(k)"
+              <button (click)="borraMiembro(k)"
                       type="button" class="btn btn-outline-danger">
                       Eliminar
               </button>
@@ -46,7 +46,7 @@
         </tbody>
       </table>
 
-      <div *ngIf="(heroes | keys).length === 0 && !loading"
+      <div *ngIf="(miembros | keys).length === 0 && !loading"
           class="alert alert-info" role="alert">
           <strong>No hay</strong> registros que mostrar
       </div>

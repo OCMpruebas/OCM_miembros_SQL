@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Heroe } from '../../interfaces/heroe.interface';
-import { HeroesService } from '../../services/heroes.service';
+import { Miembro } from '../../interfaces/miembro.interface';
+import { MiembrosService } from '../../services/miembros.service';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
+  selector: 'app-miembro',
+  templateUrl: './miembro.component.html',
   styles: []
 })
 
-export class HeroeComponent implements OnInit {
-  public heroe: Heroe = {
+export class MiembroComponent implements OnInit {
+  public miembro: Miembro = {
     nombre: '',
     observaciones: '',
     tipo: 'Colaborador'
@@ -20,15 +20,15 @@ export class HeroeComponent implements OnInit {
   nuevo = false;
   id: string;
 
-  constructor(private _heroesService: HeroesService,
+  constructor(private _miembrosService: MiembrosService,
     private router: Router,
     private route: ActivatedRoute) {
     this.route.params
       .subscribe(parametros => {
         this.id = parametros['id'];
         if (this.id !== 'nuevo') {
-          this._heroesService.getHeroe(this.id)
-            .subscribe(heroe => this.heroe = heroe);
+          this._miembrosService.getMiembro(this.id)
+            .subscribe(miembro => this.miembro = miembro);
         }
       });
   }
@@ -37,17 +37,17 @@ export class HeroeComponent implements OnInit {
   }
 
   guardar() {
-    console.log(this.heroe);
+    console.log(this.miembro);
     if (this.id === 'nuevo') {
       // insertando
-      this._heroesService.nuevoHeroe(this.heroe)
+      this._miembrosService.nuevoMiembro(this.miembro)
         .subscribe(data => {
-          this.router.navigate(['/heroe', data.name]);
+          this.router.navigate(['/miembro', data.name]);
         },
           error => console.error(error));
     } else {
       // actualizando
-      this._heroesService.actualizarHeroe(this.heroe, this.id)
+      this._miembrosService.actualizarMiembro(this.miembro, this.id)
         .subscribe(data => {
           console.log(data);
         },
@@ -56,7 +56,7 @@ export class HeroeComponent implements OnInit {
   }
 
   agregarNuevo(forma: NgForm) {
-    this.router.navigate(['/heroe', 'nuevo']);
+    this.router.navigate(['/miembro', 'nuevo']);
     forma.reset({
       casa: 'Colaborador'
     });

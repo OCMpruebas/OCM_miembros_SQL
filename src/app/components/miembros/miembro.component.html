@@ -1,5 +1,5 @@
-<h3>Miembro <small>{{ heroe.nombre }}</small></h3>
-<button [routerLink]="['heroes']"
+<h3>Miembro <small>{{ miembro.nombre }}</small></h3>
+<button [routerLink]="['miembros']"
         class="btn btn-outline-danger">
         Regresar
 </button>
@@ -16,7 +16,7 @@
 
       <div class="form-group">
         <label>Nombre</label>
-        <input [(ngModel)]="heroe.nombre"
+        <input [(ngModel)]="miembro.nombre"
               name="nombre"
               type="text"
               class="form-control"
@@ -26,7 +26,7 @@
 
       <div class="form-group">
         <label>Tipo</label>
-        <select [(ngModel)]="heroe.tipo"
+        <select [(ngModel)]="miembro.tipo"
                 name="tipo"
                 class="form-control" >
                 <option value="Fundador">Fundador</option>
@@ -36,7 +36,7 @@
 
       <div class="form-group">
         <label>Observaciones</label>
-        <textarea [(ngModel)]="heroe.observaciones"
+        <textarea [(ngModel)]="miembro.observaciones"
                   name="observaciones"
                   type="text"
                   class="form-control">
