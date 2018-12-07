@@ -7,5 +7,5 @@ OS: win32 x64
 Angular: 7.1.1
 
 ## 
-Trato de pasar de usas Firbase a usar MySQL.
+Trato de pasar de usas Firebase a usar MySQL.
 
